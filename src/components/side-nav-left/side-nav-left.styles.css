@@ -1,0 +1,90 @@
+
+#side-nav-left{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-gap:40px;
+    /* background-color: green; */
+}
+
+#side-nav-left .s-nav__item{
+    /* background-color: yellow;  */
+}
+#side-nav-left .s-nav__item ul{
+    padding: 0;
+    margin: 0; 
+    margin-top: 20px;
+}
+#side-nav-left .s-nav__item ul li{
+    margin-bottom: 5px;
+}
+#side-nav-left .s-nav__item ul li span,
+#side-nav-left .s-nav__item ul li a{
+    color: var(--white);
+}
+#side-nav-left .s-nav__item ul li span{
+    margin-right: 5px;
+    font-size: 18px;
+}
+#side-nav-left .s-nav__item ul li a{
+    font-size: 12px;
+}
+#side-nav-left .s-nav__item ul li a.active-link{
+    color: var(--yellow);
+}
+#side-nav-left .s-nav__item:nth-child(2){
+    /* background-color: yellow;  */
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-gap: 20px;  
+}
+#side-nav-left .s-nav__item .time-filter{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto; 
+    color: var(--white); 
+    /* background-color: red; */
+}
+#side-nav-left .time-filter .time-filter__list{
+    /* background-color: yellow;  */
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto; 
+    grid-gap: 10px;
+    padding-top: 5px;
+}
+#side-nav-left .time-filter__list .time-filter__item{
+    /* background-color: blue;  */
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size:12px;
+    font-weight: bold;
+}
+
+
+
+@keyframes slideScaleOpen {
+    from {transform: srgb(5, 6, 5)(0);}
+    to {transform: scaleY(1);}
+}
+@keyframes slideScaleClose {
+    from {transform: scaleY(1);}
+    to {transform: scaleY(0);}
+}
+
+@media screen and (max-width:768px){
+    /* #side-bar .content .menubar{
+        padding-right: 10px;
+    }
+    #side-bar .content .box .left-side .icon{
+        padding-right: 10px;
+    } */
+    #side-bar.reduce-height-for-btm-pallete{
+      height: 55vh;
+    }
+    /* #side-bar .content .box{
+        width: auto;
+    } */
+  }

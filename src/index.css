@@ -1,0 +1,83 @@
+:root{
+  --darkblue: #291999;
+  --lightblue: rgba(85,85,205,1);
+  --lightblue2: #8f00ff;
+  --normalorange: orange;
+  --lightred: rgba(255,0,0,0.8);
+  --lightwhite: rgba(255,255,255,0.8);
+  --darkgrey: #708090;
+  --lightgrey:#f3f3f3;
+  --normalblack: black;
+  --border-line-color: 1px solid rgb(214, 212, 212);
+  --border-line-color-2: 2px solid rgb(214, 212, 212);
+  --site-black: rgb(29 30 36); /*#1d1e24;*/
+  --site-black-2: rgb(24, 24, 24); /*#181818;*/
+  --site-red: rgb(176, 53, 53); 
+  --site-green: green; 
+  --text-color: : rgb(245, 239, 239);
+  --sub-color: grey;
+  --main-color: black;
+
+
+  --white: white;
+  --black: black;
+  --yellow: #ffca27;
+  --green: #00b359;
+  --red: #ff3826;
+  --blue: #008bff;
+  --orange: #ff751a;
+  --deep-red: #e51717;
+  --mask: #1b1b1b;
+  --major: #333;
+  --normal: #666;
+  --gray: #999;
+  --disabled: #ccc;
+  --default: #ececec;
+  --pale-gray: #adadad;
+  --light-gray: #f8f8f8;
+  --button-color: linear-gradient(to right, rgb(255, 255, 255),var(--major));
+  --button-inset-color: linear-gradient(to right, var(--mask), rgb(255, 255, 255), var(--mask));
+  --button-reverse-color: linear-gradient(to right, var(--major), rgb(255, 255, 255));
+  --head-color: linear-gradient(to right, var(--normal), var(--disabled), var(--normal));
+  --header-color: linear-gradient(to bottom, yellow, var(--yellow));
+
+
+  --odds-color: linear-gradient(to right, var(--normal),var(--major));
+  --odds-reverse-color: linear-gradient(to right, var(--major), var(--normal));
+
+  --font-size-10: 10px;
+  --font-size-11: 11px;
+  --font-size-12: 12px;
+  --font-size-13: 13px;
+  --font-size-14: 14px;
+  --font-size-15: 15px;
+  --font-size-16: 16px;
+  --font-size-17: 17px;
+  --font-size-18: 18px;
+  --font-size-19: 19px;
+  --font-size-20: 20px;
+}
+body {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--black);
+  border-radius: 100px 70px 0 0 ;
+  overflow-x: hidden;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*background: linear-gradient(
+    to left, 
+    rgba(7, 27, 82, 1) 0%,
+    rgba(7, 27, 82, 1) 100%
+  ); */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

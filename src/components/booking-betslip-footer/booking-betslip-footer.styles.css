@@ -1,0 +1,113 @@
+
+.booking-betslip__footer .booking-betslip__footer__item{
+    background: var(--black);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+}
+.booking-betslip__footer .booking-betslip__footer__row:nth-child(1){
+    border-bottom: 1px solid var(--major);
+}
+.booking-betslip__footer .booking-betslip__footer__row{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    padding: 10px 0;
+}
+.booking-betslip__footer .booking-betslip__footer__row:nth-child(1) span{
+    text-align: center;
+    padding: 5px 0;
+}
+.booking-betslip__footer .booking-betslip__footer__row:nth-child(1) span.active-span{
+    background-color: brown;
+    border-radius: 20px;
+}
+
+.booking-betslip__footer .booking-betslip__footer__row{
+}
+.booking-betslip__footer .booking-betslip__footer__row:nth-child(2){
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    border-bottom: 1px solid var(--major);
+    grid-gap: 20px;
+    padding: 20px 10px;
+}
+.booking-betslip__footer .booking-betslip__footer__row:nth-child(2) .booking-betslip__footer__col:nth-child(1){
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    justify-content: space-between;
+}
+.booking-betslip__footer .booking-betslip__footer__col .booking-betslip__odds,
+.booking-betslip__footer .booking-betslip__footer__col .booking-betslip__amount{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+}
+.booking-betslip__footer .booking-betslip__footer__col .booking-betslip__odds{
+    grid-gap: 5px;
+}
+.booking-betslip__footer .booking-betslip__footer__col .booking-betslip__odds span:first-child{
+
+}
+.booking-betslip__footer .booking-betslip__footer__col .booking-betslip__odds span:last-child{
+    font-weight: bold;
+}
+.booking-betslip__footer .booking-betslip__amount span:first-child{
+    padding: 0 5px;
+    background: var(--button-reverse-color);
+}
+.booking-betslip__footer .booking-betslip__footer__row:nth-child(2) .booking-betslip__footer__col:nth-child(2){
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto;
+    grid-gap: 5px;
+}
+.booking-betslip__footer .booking-betslip__footer__row:nth-child(2) .booking-betslip__footer__col:nth-child(2) span{
+    text-align: center;
+    background-color: var(--major);
+    padding: 7px 0;
+    border-radius: 20px;
+}
+
+
+.booking-betslip__footer .booking-betslip__footer__row:nth-child(3){
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    padding: 20px 10px;
+}
+.booking-betslip__footer .booking-betslip__footer__row:nth-child(3) .booking-betslip__footer__col{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    justify-content: space-between;
+    /* background-color: aqua; */
+}
+
+
+@keyframes slideScaleOpen {
+    from {transform: srgb(5, 6, 5)(0);}
+    to {transform: scaleY(1);}
+}
+@keyframes slideScaleClose {
+    from {transform: scaleY(1);}
+    to {transform: scaleY(0);}
+}
+
+@media screen and (max-width:768px){
+    /* #side-bar .content .menubar{
+        padding-right: 10px;
+    }
+    #side-bar .content .box .left-side .icon{
+        padding-right: 10px;
+    } */
+    #side-bar.reduce-height-for-btm-pallete{
+      height: 55vh;
+    }
+    /* #side-bar .content .box{
+        width: auto;
+    } */
+  }

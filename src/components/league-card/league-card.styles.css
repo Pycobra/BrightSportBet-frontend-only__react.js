@@ -1,0 +1,244 @@
+#league-card {
+    margin-bottom: 50px;
+}
+#league-card .league-card__wrap{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    align-content: space-between;
+}
+#league-card .league-card__item:nth-child(1) {
+  margin-bottom: 10px;
+}
+#league-card .l-card__list{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto;
+  grid-gap: 2px;
+  color: var(--white);
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+#league-card .l-card__list .l-card__list-item{
+  background: var(--major);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 12px;
+}
+#league-card .league-card__item:nth-child(2) {
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#league-card__main-content {
+  color: var(--default);
+}
+#league-card__main-content .l-c-item__wrap{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+}
+#league-card__main-content .l-c-item{ 
+  padding: 10px 20px 10px 10px;
+}
+
+#league-card__main-content .l-c-item:nth-child(1){
+  background-color: #544f4fca;
+  /* border-bottom: .2px solid var(--black);  */
+}
+#league-card__main-content .l-c-item__wrap .l-c-item__head{
+  display: flex;
+  justify-content: space-between;
+}
+#league-card__main-content .l-c-item__head span{
+  /* background-color: red; */
+  letter-spacing: .5px;
+  font-size: 12px;
+  color: var(--default)
+}
+#league-card__main-content .l-c-item__head span:nth-child(2){
+  font-size: 11px;
+}
+
+
+
+#league-card__main-content .l-c-item:nth-child(2){
+  background-color: #625d5dca;
+}
+#league-card__main-content .l-c-item:nth-child(2) .l-c-item__head {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  /* background-color: red; */
+}
+#league-card__main-content .l-c-item:nth-child(2) .l-c-item__head .col{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  align-content: center;
+}
+#league-card__main-content .l-c-item:nth-child(2) .l-c-item__head .col:nth-child(2){
+  grid-template-columns: auto auto;
+}
+#league-card__main-content .l-c-item:nth-child(2) .col span{
+  /* background-color: blue; */
+  /* text-align: center; */
+}
+#league-card__main-content .l-c-item:nth-child(2) .col:first-child span{
+  border-radius: 20px;
+  padding: 5px 15px;
+  /* text-align: center; */
+}
+#league-card__main-content .l-c-item:nth-child(2) .col:first-child span.active-span{
+  background-color: #78715a;
+}
+
+
+
+#league-card__main-content .l-c-item:nth-child(3){
+  background-color: #625d5dca;
+}
+#league-card__main-content .l-c-item:nth-child(3) .content{
+  /* display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 5px; */
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  font-size: 12px;
+}
+#league-card__main-content .l-c-item:nth-child(3) .content span{
+  border-radius: 20px;
+  padding: 5px 10px;
+  text-align: center;
+  margin: 5px 10px;
+}
+#league-card__main-content .l-c-item:nth-child(3) .content span.active-span{
+  background-color: #78715a;
+}
+
+
+#league-card__main-content .l-c-item:nth-child(4){
+  background-color: #625d5dca;
+  border-bottom: 1px solid var(--major);
+  padding: 0;
+}
+#league-card__main-content .l-c-item:nth-child(4) .content{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 1px;
+  /* border: .5px solid var(--major); */
+  font-size: 12px;
+  background-color: var(--major);
+}
+#league-card__main-content .l-c-item:nth-child(4) .content span{
+  padding: 10px 5px;
+  text-align: center;
+  background-color: #625d5dca;
+  /* border-left: .5px solid var(--major);
+  border-top: .5px solid var(--major); */
+}
+#league-card__main-content .l-c-item:nth-child(4) .content span.active-span{
+  color: var(--yellow);
+}
+
+
+
+#league-card__main-content .l-c-item:nth-child(5){
+  background-color: var(--normal); 
+  background: var(--head-color);
+  /* border-bottom: .2px solid var(--black);  */
+}
+#league-card__main-content .l-c-item__wrap .l-c-item__head-1{
+  display: flex;
+  justify-content: space-between;
+}
+#league-card__main-content .l-c-item__head-1 span{
+  /* background-color: red; */
+  letter-spacing: .5px;
+  font-size: 12px;
+  color: var(--default)
+}
+#league-card__main-content .l-c-item__head-1 span:nth-child(2){
+  font-size: 11px;
+}
+
+
+
+#league-card__main-content .l-c-item:nth-child(6) {
+  background-color: var(--mask);
+  padding: 0;
+  /* border-bottom: .2px solid var(--black);  */
+}
+#league-card__main-content .l-c-item__table-betting-wrap{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto; 
+}
+#league-card__main-content .l-c-item__table-item{
+  padding: 10px 20px; 
+  background-color: var(--mask);
+}
+#league-card__main-content .l-c-item__table-item:nth-child(1) .content{
+  /* display: flex;
+  justify-content: flex-end; */
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  justify-content: space-between;
+  /* background-color: red; */
+}
+#league-card__main-content .content .content-odd__title{
+  display: grid;
+  grid-template-columns: 156px 156px;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  justify-content: space-between;
+}
+#league-card__main-content .content-odd__head {
+  /* background-color: blue; */
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  justify-content: space-between;
+}
+#league-card__main-content .content-odd__head .content-odd__head-col {
+  /* background-color: blue; */
+  display: grid;
+  grid-template-columns: 52px 52px 52px;
+  grid-template-rows: auto;
+}
+#league-card__main-content .l-c-item__table-item:nth-child(1) .content span{
+  /* background-color: yellow; */
+  text-align: center;
+  font-size: 12px;
+  color: var(--default)
+}
+#league-card__main-content .l-c-item__table-item:nth-child(1){
+  border-bottom: .2px solid var(--normal);
+}
+#league-card__main-content .l-c-item__table-item:last-child {
+  padding: 0;
+  background-color: var(--mask);
+}

@@ -1,0 +1,91 @@
+.table-item{
+    background-color: var(--major);
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    justify-content: space-between;
+    font-size: 12px;
+    padding: 10px 20px;
+    border-bottom: .2px solid var(--normal);
+}
+.table-item:first-child{
+    padding-top: 0;
+}
+.table-item:last-child{
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.table-item .table-item-col .table-item__time-text{
+    display: flex;
+    align-items: center;
+    color: var(--orange);
+}
+.table-item .table-item-col:first-child{
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-template-rows: auto;
+    grid-gap: 1rem;
+    /* background-color: red; */
+}
+.table-item .table-item-col:first-child .table-item__team-wrap{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    height: 100%;
+    color: var(--white);
+}
+.table-item .table-item-col:last-child{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    grid-gap: 15px;
+    /* background-color: rgb(112, 107, 165); */
+}
+.table-item .table-item__img-holder{
+    /* background-color: blue; */
+    font-size: 25px;
+    color: var(--disabled);
+}
+.table-item .table-item__score .table-item__score-wrap{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    align-content: space-between;
+    font-size: 13px;
+    height: 100%;
+    color: var(--orange);
+    /* background-color: yellow; */
+}
+.table-item .table-item__odd .table-item__odd-wrap{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    color: var(--yellow);
+}
+.table-item .table-item__odd .table-item__odd-item{
+    display: grid;
+    grid-template-columns: 52px 52px 52px;
+    grid-template-rows: auto;
+}
+.table-item .table-item__odd-item .odd-text {
+    /* background-color: var(--green);
+    background: var(--header-color); */
+    background-color: var(--black);
+    text-align: center;
+    padding: 10px 0;
+}
+.table-item .table-item__odd-item .odd-text.active-odd-text {
+    background-color: var(--green);
+    color: var(--white);
+}
+.table-item .table-item__odd-item .odd-text:first-child {
+    border-radius: 5px 0 0 5px;
+}
+.table-item .table-item__odd-item .odd-text:nth-child(2) {
+    border-left: 1px solid var(--mask);
+    border-right: 1px solid var(--mask);
+}
+.table-item .table-item__odd-item .odd-text:last-child {
+    border-radius: 0 5px 5px 0;
+}

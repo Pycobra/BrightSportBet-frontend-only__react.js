@@ -1,0 +1,69 @@
+
+template#menubar-hover{
+    position: absolute;
+    top: 20vh;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    /* padding: 0 55px; */
+    z-index: 2;
+}
+template#menubar-hover.slide-down-menu-bar{
+    display: flex;
+    animation: slideDownMenuBar 500ms ease-in 1;
+}
+template#menubar-hover.slide-up-menu-bar{
+    top: -140px;
+    display: flex;
+    animation: slideUpMenuBar 500ms ease-in 1;
+}
+template#menubar-hover .list-place{
+    background-color: var(--site-black); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    padding-right: 55px;
+
+}
+template#menubar-hover .list-place ul{
+    padding: 0;
+    margin: 0;
+}
+template#menubar-hover .list-place ul li{
+    padding: 5px;
+    margin: 0;
+    font-weight: bold;
+    color:rgb(210, 39, 39);
+    padding: 10px;
+}
+template#menubar-hover .list-place ul li:hover{
+    color: var(--normalwhite);
+}
+template#menubar-hover .list-place .sign-up{
+    padding: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+    color:text-color;
+}
+template#menubar-hover .list-place .sign-up span{
+    margin-right: 10px;
+}
+template#menubar-hover .list-place .sign-up:hover{
+    color: green;
+}
+
+
+
+@keyframes slideDownMenuBar {
+    from {transform: translateY(-100px);}
+    to {transform: translateY(20px);}
+}
+@keyframes slideUpMenuBar {
+    from {transform: translateY(250px);}
+    to {transform: translateY(-100px);}
+}

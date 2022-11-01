@@ -1,0 +1,119 @@
+.custom-button {
+    height:40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:auto;
+    border-radius:50px;
+    font-size:1rem;
+    font-weight:normal;
+    cursor: pointer;
+    font-family: 'Open Sans Condensed';
+    color:var(--normalwhite);
+    /* margin-right: 15px; */
+    position: relative;
+    z-index: 1;
+    /* margin: 10px 10px 0 0; */
+}
+.custom-button.major-btn{
+  height:55px;
+  width: 100%;
+  margin: 0;
+  border-radius:0;
+  border: none;
+  /* box-shadow:2px 2px 12px rgba(0,0,0,0.9); */
+  background-color:var(--red);
+}
+.flat-button{
+  height:30px;
+  width: 80px;
+  border-radius:2px;
+  box-shadow:2px 2px 12px rgba(0,0,0,0.9);
+  background-color:var(--mask);
+  background: var(--button-color);
+  border: none;
+}
+.custom-button .artist-view-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  position: absolute;
+  padding: 5px;
+  border-radius: 5px;
+  color: black;
+  background-color: aliceblue;
+  z-index: 2;
+}
+.custom-button .card .card-inside{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.custom-button .card .card-inside .icon{
+  position: absolute;
+  top: -10px;
+  left: 0;
+  color: blue;
+}
+
+.custom-button.circle-type,
+.custom-button.circle-type2{
+  height:40px;
+  width: 40px;
+  color: var(--site-green);
+  border:1px solid white;
+  background-color: transparent;
+}
+.custom-button.circle-type:last-child,
+.custom-button.circle-type2:last-child{
+  margin-right:0;
+}
+.custom-button.border-type span:first-child,
+.custom-button.border-type2 span:first-child{
+  width: 0;
+  /* margin-right: 10px; */
+}
+.custom-button.circle-type-2{
+  /* height:50px;
+  width: 100%;
+  margin-top: 10px;
+  border-radius:0;
+  box-shadow:2px 2px 12px rgba(0,0,0,0.9);
+  background-color: var(--normalblack);
+  color: var(--site-green);
+  border:none;
+  background-color: transparent; */
+}
+.custom-button.border-type{
+  /* width: 100%; */
+  padding: 10px;
+  color: var(--site-green);
+  border:1px solid white;
+  background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
