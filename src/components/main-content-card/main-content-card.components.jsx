@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./main-content-card.styles.css";
 import Accordion from "../accordion/accordion.components";
 import BetslipTableItem from "../betslip-table-item/betslip-table-item.components";
 
 const MainContentCard = ({LiveBetting, Upcoming, AccordionHash, data}) => {
-    
+    const HandleMainContentClick = e => {
+    }
     return (
         <div id="main-content-card">
             <div className="container">
@@ -17,7 +18,7 @@ const MainContentCard = ({LiveBetting, Upcoming, AccordionHash, data}) => {
                     </div>
                     <div className="m-c-c-item">
                         <div className="m-c-c-item__head-2">
-                            <Accordion AccordionHash={AccordionHash} MainContentCard/> 
+                            <Accordion HandleMainContentClick={HandleMainContentClick} AccordionHash={AccordionHash} MainContentCard/> 
                         </div>
                     </div>
                     <div className="m-c-c-item">

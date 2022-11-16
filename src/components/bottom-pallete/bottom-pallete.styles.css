@@ -1,0 +1,97 @@
+#bottom-pallete{
+  width: 100%;
+  display: none;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index:2;
+}
+#bottom-pallete .new-element{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  position: fixed;
+  height: 70vh;
+  width: 100%;
+  background-color: var(--mask);
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  overflow: scroll;
+  border: 10px solid var(--black);
+  border-bottom: none;
+}
+#bottom-pallete .bottom-img-holder{
+  text-align: center;
+  background-color:var(--mask);
+  font-weight:bold;
+  font-size:25px;
+  color: var(--disabled);
+}
+#bottom-pallete .b-p__wrap{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+#bottom-pallete .b-p__list{
+  display: grid;
+  grid-template-columns: auto auto 20% auto auto;
+  grid-template-rows: auto;
+}
+#bottom-pallete .b-p__list-item{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  background-color: var(--mask);
+  justify-content: center;
+  align-content: end;
+  padding: 10px;
+  color: var(--disabled);
+}
+#bottom-pallete .b-p__list-item span{
+  margin-bottom: 5px;
+  text-align: center;
+}
+#bottom-pallete .b-p__list-item:nth-child(3){
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  position: relative;
+  overflow: visible;
+}
+#bottom-pallete .b-p__list-item:nth-child(3) .wrap{
+  background-color: var(--deep-red);
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 90px;
+  border-radius: 30px 30px 0 0;
+  padding-top: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+#bottom-pallete .b-p__list-item:nth-child(3) .wrap span:nth-child(3){
+}
+
+
+
+
+@media screen and (max-width:540px){
+  #bottom-pallete{
+    display: grid;
+  }
+  #bottom-pallete .b-p__list-item span{
+    font-size: 12px;
+  }
+}
+@media screen and (max-width:414px){
+  #bottom-pallete{
+    font-size: 12px;
+  }
+}

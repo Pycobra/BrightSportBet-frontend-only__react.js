@@ -1,11 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./betslip-table-item.styles.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faAlignRight } from "@fortawesome/free-solid-svg-icons"
+
+
 
 
 const BetslipTableItem = ({data, index, tableType}) => {
-    // console.log({...otherProps})
     const {time, awayTeam, homeTeam, scoreHome, scoreAway, homeW, x, awayW, homeDC, DC, awayDC} = data
     
+    const HandleOddClick = e => {
+        e.target.classList.toggle('active-odd-text')
+    }
     return (
     <div className="table-item">
         <div className="table-item-col">
@@ -19,7 +25,7 @@ const BetslipTableItem = ({data, index, tableType}) => {
         </div>
         <div className="table-item-col">
             <div className="table-item__img-holder">
-                <span>&#9993;</span>
+                <span className="icon"><FontAwesomeIcon icon={faAlignRight} /></span>
             </div> 
             <div className="table-item__score">
             {tableType === 'LiveBetting'
@@ -33,15 +39,15 @@ const BetslipTableItem = ({data, index, tableType}) => {
             <div className="table-item__odd">
                 <div className="table-item__odd-wrap">
                     <div className="table-item__odd-item">
-                        <span className={`odd-text ${index === 0
+                        <span onClick={e => HandleOddClick(e)} className={`odd-text ${index === 0
                         ? 'active-odd-text' : null}`}>{homeW}</span>
-                        <span className="odd-text">{x}</span>
-                        <span className="odd-text">{awayW}</span>
+                        <span onClick={e => HandleOddClick(e)} className="odd-text">{x}</span>
+                        <span onClick={e => HandleOddClick(e)} className="odd-text">{awayW}</span>
                     </div>
                     <div className="table-item__odd-item">
-                        <span className="odd-text">{homeDC}</span>
-                        <span className="odd-text">{DC}</span>
-                        <span className="odd-text">{awayDC}</span>
+                        <span onClick={e => HandleOddClick(e)} className="odd-text">{homeDC}</span>
+                        <span onClick={e => HandleOddClick(e)} className="odd-text">{DC}</span>
+                        <span onClick={e => HandleOddClick(e)} className="odd-text">{awayDC}</span>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,6 @@
 import React from "react";
 import "./footer.styles.css";
-import { Link } from 'react-router-dom';
-
+import SiteLogo from "../site-logo/site-logo.component";
 
 
 
@@ -42,9 +41,7 @@ const Footer = ({}) => {
                                 </div>
                             </div>
                             <div className="footer-item__col">
-                                <div className='f-item__logo'>
-                                    <Link to="/" className='f-item__logo-icon'><span>BRIGHT</span><span>Bet</span></Link>
-                                </div>
+                                <SiteLogo />
                             </div>
                         </div>
                     </div>

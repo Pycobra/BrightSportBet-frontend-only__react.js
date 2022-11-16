@@ -4,7 +4,8 @@ import "./custom-button.styles.css";
 
 const CustomButton = ({children, buttonType, ...otherProps}) => (
     <button className={`${
-        (buttonType === "MajorButton") ? "major-btn" 
+        (buttonType === "MajorButton register") ? "major-btn register" 
+        : (buttonType === "MajorButton") ? "major-btn" 
         : (buttonType === "FlatButton") ? "flat-button" 
         : (buttonType === "circleType") ? "circle-type" 
         : (buttonType === "circleType2") ? "circle-type-2"

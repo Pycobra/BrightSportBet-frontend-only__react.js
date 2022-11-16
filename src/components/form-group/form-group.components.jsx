@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import FormInput from "../form-input/form-input.component";
-import { ReactComponent as Search } from '../asset/search-2.svg';
+// import { ReactComponent as Search } from '../asset/search-2.svg';
 import './form-group.styles.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSearch } from "@fortawesome/free-solid-svg-icons"
 
 
 const FormGroup = ({HeaderType, MenuBarType, SideBarType}) => {
@@ -25,12 +27,11 @@ const FormGroup = ({HeaderType, MenuBarType, SideBarType}) => {
                 onChange={(e) => handleInput(e)}
                 name="search1" 
                 required/>
-            <span className="search-icon"><Search /></span>
+            <span className="search-icon"><FontAwesomeIcon icon={faSearch} /></span>
         </form>
     )
 }
 
 export default FormGroup;
-// export default connect(mapStateToProps)(Header);
 
 

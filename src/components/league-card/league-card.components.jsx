@@ -1,30 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { connect, useDispatch, useSelector } from "react-redux";
-import { Link } from 'react-router-dom';
-import { createStructuredSelector } from "reselect";
+import React from "react";
 import "./league-card.styles.css";
-import { fetchAllArtistStart } from "../../redux/profile/profile.actions";
-import { fetchAllSongStart } from "../../redux/songs/songs.actions";
-import { fetchAllPhotoStart } from "../../redux/photo/photo.actions";
-import { SelectAllSongAlbumPhotos } from "../../redux/songs/songs.selectors";
-import { ProfileAllArtists } from "../../redux/profile/profile.selectors";
 import LeagueCardMainItem from "../league-card-main-item/league-card-main-item.components";
-import { ReactComponent as CaretRight } from '../asset/caret-double-right-duotone.svg';
+// import { ReactComponent as CaretRight } from '../asset/caret-double-right-duotone.svg';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {  faCaretRight } from "@fortawesome/free-solid-svg-icons"
 
 
 
 const LeagueCard = ({data, leagueNames}) => {
-    const title= Object.keys(data).map(title => title)
-    const date= Object.keys(data[title])
-    const values= data[title]
-    // var yy = []
-    // console.log(title[0].split(' ').slice(1,).map(i => yy.join(i) ))
-    // const title2 = `${title[0].split(' ').slice(1,)}, ${title[0].split(' ')[0]}`
-    // console.log(title2)
+    const name= Object.keys(data).map(title => title)
+    const date= Object.keys(data[name])
+    const values= data[name]
+
     
-    // useEffect(() => {
-    //     const ddd = document.querySelectorAll('')
-    // })
+    const HandleSpanClick = e => {
+        Array.from(e.target.parentElement.children).map(i => i.classList.remove('active-span'))
+        e.target.classList.toggle('active-span')
+    }
     
     return (    
         <div id="league-card">
@@ -32,10 +24,12 @@ const LeagueCard = ({data, leagueNames}) => {
                 <div className="league-card__item">
                     <ul className='l-card__list'>
                         {
-                            leagueNames.map(({title,icon}, idx) => 
-                                <li key={idx} className='l-card__list-item' title={title} id={`l-card__list-item-${idx}`}>
-                                    <span to="/" id={`l-card__list-item-${idx}`} title={title}>{title}</span>
-                                </li>)
+                            leagueNames.map(({title, icon, active}, idx) => 
+                                <li onClick={e => HandleSpanClick(e)} key={idx} id={`l-card__list-item-${idx}`}
+                                    className={`l-card__list-item ${name[0] === title ? 'active-span' : null}`} title={title}>
+                                    {title}
+                                </li>
+                                )
                         }
                         <li className='l-card__list-item' title="empty">
                             <span to="/" title="empty"></span>
@@ -54,18 +48,18 @@ const LeagueCard = ({data, leagueNames}) => {
                                 <div className="l-c-item__wrap">
                                     <div className="l-c-item">
                                         <div className="l-c-item__head">
-                                            <span>{title}</span>
+                                            <span>{name}</span>
                                             <span>Home / Coupon</span>
                                         </div>
                                     </div>
                                     <div className="l-c-item">
                                         <div className="l-c-item__head">
-                                            <div className="col"><span>Today</span><span>Week</span><span className="active-span">All</span></div>
+                                            <div className="col" onClick={e => HandleSpanClick(e)}><span>Today</span><span>Week</span><span className="active-span">All</span></div>
                                             <div className="col"><span>Order By:</span><span>League</span></div>
                                         </div>
                                     </div>
                                     <div className="l-c-item">
-                                        <div className="content">
+                                        <div onClick={e => HandleSpanClick(e)} className="content">
                                             <span className="active-span">Popular Markets</span>
                                             <span>1st Half Markets</span>
                                             <span>2nd Half Markets</span>
@@ -78,7 +72,7 @@ const LeagueCard = ({data, leagueNames}) => {
                                         </div>
                                     </div>
                                     <div className="l-c-item">
-                                        <div className="content">
+                                        <div onClick={e => HandleSpanClick(e)} className="content">
                                             <span className="active-span">Main Markets</span>
                                             <span>GG/NG</span>
                                             <span>DNB</span>
@@ -98,8 +92,8 @@ const LeagueCard = ({data, leagueNames}) => {
                                     </div>
                                     <div className="l-c-item">
                                         <div className="l-c-item__head-1">
-                                            <span>{title}</span>
-                                            <span><CaretRight /></span>
+                                            <span>{name}</span>
+                                            <span><FontAwesomeIcon icon={faCaretRight} /></span>
                                         </div>
                                     </div>
                                     <div className="l-c-item">
@@ -133,7 +127,7 @@ const LeagueCard = ({data, leagueNames}) => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>  
                                 </div>
                             </div>
                         </div>
@@ -143,16 +137,6 @@ const LeagueCard = ({data, leagueNames}) => {
     )
 }
 
-const mapStateToProps = createStructuredSelector({
-    selectAllSongAlbumPhotos: SelectAllSongAlbumPhotos,
-    profileAllArtists: ProfileAllArtists,
-    selectAllSong: SelectAllSongAlbumPhotos,
-})
- const mapDispatchToProps = (dispatch) => ({
-    fetchAllArtists: () => dispatch(fetchAllArtistStart()),
-    fetchAllSongs: () => dispatch(fetchAllSongStart()),
-    fetchAllPhotos: () => dispatch(fetchAllPhotoStart()),
- })
- export default connect(mapStateToProps, mapDispatchToProps)(LeagueCard);
+ export default LeagueCard;
 
 

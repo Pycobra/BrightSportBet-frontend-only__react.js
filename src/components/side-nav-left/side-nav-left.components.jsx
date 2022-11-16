@@ -1,28 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { connect, useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import { createStructuredSelector } from "reselect";
 import "./side-nav-left.styles.css";
-import { fetchAllArtistStart } from "../../redux/profile/profile.actions";
-import { fetchAllSongStart } from "../../redux/songs/songs.actions";
-import { fetchAllPhotoStart } from "../../redux/photo/photo.actions";
-import { SelectAllSongAlbumPhotos } from "../../redux/songs/songs.selectors";
-import { ProfileAllArtists } from "../../redux/profile/profile.selectors";
 import FormGroup from "../form-group/form-group.components";
 import Accordion from "../accordion/accordion.components";
 
 
-const SideNavLeft = ({leagueNames}) => {
-    console.log(leagueNames)
-    const AccordionHash = [{title: 'Soccer', icon: <span>&#9993;</span>}, {title: 'Special Soccer', icon: <span>&#9993;</span>}, {title: 'Zoom Soccer', icon: <span>&#9993;</span>}, 
-            {title: 'Antepost Soccer', icon: <span>&#9993;</span>}, {title: 'Player Soccer', icon: <span>&#9993;</span>}, 
-            {title: 'Tennis', icon: <span>&#9993;</span>}, {title: 'BaseBall', icon: <span>&#9993;</span>}, {title: 'Special BasketBall', icon: <span>&#9993;</span>}, 
-            {title: 'American Football', icon: <span>&#9993;</span>}, {title: 'BaseBall', icon: <span>&#9993;</span>}, {title: 'HandBall', icon: <span>&#9993;</span>}, 
-            {title: 'Rugby', icon: <span>&#9993;</span>}, {title: 'VolleyBall', icon: <span>&#9993;</span>}, {title: 'Ice Hockey', icon: <span>&#9993;</span>}, 
-            {title: 'Waterpollo', icon: <span>&#9993;</span>}, {title: 'Boxing', icon: <span>&#9993;</span>}, {title: 'Cricket', icon: <span>&#9993;</span>}, 
-            {title: 'Table Tennis', icon: <span>&#9993;</span>}, {title: 'Squash', icon: <span>&#9993;</span>}, {title: 'Futsal', icon: <span>&#9993;</span>}, 
-            {title: 'FloorBall', icon: <span>&#9993;</span>}, {title: 'Specials', icon: <span>&#9993;</span>}, {title: 'Outright', icon: <span>&#9993;</span>}]
-    
+const SideNavLeft = ({leagueNames, AccordionHash}) => {
+    const [clicked, setClicked] = useState(
+        Array.from(leagueNames).map((obj,idx) => obj.active ? true : false)
+    )
+    const [leagueActivate, setLeagueActivate] = useState(leagueNames)
+    const HandleClick = (e, position) => {
+        const clickedState = clicked.map((obj, index) => index === position ? !obj : obj); 
+        setClicked(clickedState)
+        const updateLeague = leagueActivate.map((obj, index) => 
+            index === position ? {...obj, 'active': !obj.active} : obj); 
+        setLeagueActivate(updateLeague)
+    }
+
     return (
         <div id="side-nav-left" className='s-nav__wrap'>
             <div className="s-nav__item">
@@ -30,15 +25,24 @@ const SideNavLeft = ({leagueNames}) => {
                 <div className='s-nav__top-level__ul-wrap'>
                     <ul className='s-nav__list'>
                      {
-                     leagueNames.map(({title,icon}, idx) => 
-                     <li key={idx} className='s-nav__list-item' title={title} id={`s-nav__list-item-${idx}`}>
-                         {icon}
-                         <Link className={
-                            title==='Live Betting' || title==='Italy Seria A' ||
-                            title==='Germany Bundesliga' || title==='England Premier League'
-                            ? 'active-link' : null} to="/" id={`s-nav__list-item-${idx}`} title="Live Betting">{title}</Link>
-                     </li>
-                     )
+                        leagueActivate
+                        ? leagueActivate.map(({title, icon, active}, idx) => 
+                        <li onClick={e => HandleClick(e, idx)} 
+                            // onMouseEnter={e => HandleMouseEnter(e, idx)} 
+                            // onMouseLeave={e => HandleMouseLeave(e, idx)} 
+                            data-index={idx} key={idx} className='s-nav__list-item' 
+                            title={title} id={`s-nav__list-item-${idx}`}>
+                            <div className="s-nav__list-item__img-holder" data-index={idx}>
+                                <span className="icon" data-index={idx}>{icon}</span>
+                            </div>
+                            <div className='s-nav__list-item__text' data-index={idx}>
+                                <Link data-index={idx} className={`text ${active ? 'active-span' : null}`} 
+                                    to="/" id={`s-nav__list-item-${idx}`} title={title}>{title}</Link>
+                            </div>
+                            {/* <span className="list-cover" data-index={idx}></span> */}
+                        </li>
+                        )
+                        : null
                      }
                      </ul>
                 </div>
@@ -66,58 +70,11 @@ const SideNavLeft = ({leagueNames}) => {
                         </div>
                     </div>
                 </div>
+                <h1 className="head">SPORTS</h1>
                 <Accordion AccordionHash={AccordionHash} SideNav/>
             </div>
         </div>
             
     )
 }
-
-const mapStateToProps = createStructuredSelector({
-    selectAllSongAlbumPhotos: SelectAllSongAlbumPhotos,
-    profileAllArtists: ProfileAllArtists,
-    selectAllSong: SelectAllSongAlbumPhotos,
-})
- const mapDispatchToProps = (dispatch) => ({
-    fetchAllArtists: () => dispatch(fetchAllArtistStart()),
-    fetchAllSongs: () => dispatch(fetchAllSongStart()),
-    fetchAllPhotos: () => dispatch(fetchAllPhotoStart()),
- })
-//  export default SideBar;
- export default connect(mapStateToProps, mapDispatchToProps)(SideNavLeft);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+ export default SideNavLeft;

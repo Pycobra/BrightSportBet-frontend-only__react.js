@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { connect, useDispatch, useSelector } from "react-redux";
-import { createStructuredSelector } from "reselect";
+import React from "react";
 import "./booking-betslip.styles.css";
-import { fetchAllArtistStart } from "../../redux/profile/profile.actions";
-import { fetchAllSongStart } from "../../redux/songs/songs.actions";
-import { fetchAllPhotoStart } from "../../redux/photo/photo.actions";
-import { SelectAllSongAlbumPhotos } from "../../redux/songs/songs.selectors";
-import { ProfileAllArtists } from "../../redux/profile/profile.selectors";
 import CheckBoxInput from "../checkbox-input/checkbox-input.component";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTimes } from "@fortawesome/free-solid-svg-icons"
 
 
 const BookingBetslip = ({}) => {
@@ -23,7 +18,7 @@ const BookingBetslip = ({}) => {
                                 <span>Everton - Wolves</span>
                             </div>
                             <div className="booking-betslip__img-holder">
-                                <span>&#9993;</span>
+                                <FontAwesomeIcon icon={faTimes} />
                             </div>
                         </div>
                         <div className="booking-betslip__body">
@@ -44,7 +39,7 @@ const BookingBetslip = ({}) => {
                                 <span>Chelsea - Nottinham Forest</span>
                             </div>
                             <div className="booking-betslip__img-holder">
-                                <span>&#9993;</span>
+                                <FontAwesomeIcon icon={faTimes} />
                             </div>
                         </div>
                         <div className="booking-betslip__body">
@@ -65,7 +60,7 @@ const BookingBetslip = ({}) => {
                                 <span>Liverpool - West Ham</span>
                             </div>
                             <div className="booking-betslip__img-holder">
-                                <span>&#9993;</span>
+                                <FontAwesomeIcon icon={faTimes} />
                             </div>
                         </div>
                         <div className="booking-betslip__body">
@@ -86,7 +81,7 @@ const BookingBetslip = ({}) => {
                                 <span>Ac milan - Benevento</span>
                             </div>
                             <div className="booking-betslip__img-holder">
-                                <span>&#9993;</span>
+                                <FontAwesomeIcon icon={faTimes} />
                             </div>
                         </div>
                         <div className="booking-betslip__body">
@@ -107,7 +102,7 @@ const BookingBetslip = ({}) => {
                                 <span>Atalanta - Cromonese</span>
                             </div>
                             <div className="booking-betslip__img-holder">
-                                <span>&#9993;</span>
+                                <FontAwesomeIcon icon={faTimes} />
                             </div>
                         </div>
                         <div className="booking-betslip__body">
@@ -128,7 +123,7 @@ const BookingBetslip = ({}) => {
                                 <span>Roma - Empoli</span>
                             </div>
                             <div className="booking-betslip__img-holder">
-                                <span>&#9993;</span>
+                                <FontAwesomeIcon icon={faTimes} />
                             </div>
                         </div>
                         <div className="booking-betslip__body">
@@ -149,7 +144,7 @@ const BookingBetslip = ({}) => {
                                 <span>Bayern - Ausburg</span>
                             </div>
                             <div className="booking-betslip__img-holder">
-                                <span>&#9993;</span>
+                                <FontAwesomeIcon icon={faTimes} />
                             </div>
                         </div>
                         <div className="booking-betslip__body">
@@ -170,7 +165,7 @@ const BookingBetslip = ({}) => {
                                 <span>Stuttgart - Union Berlin</span>
                             </div>
                             <div className="booking-betslip__img-holder">
-                                <span>&#9993;</span>
+                                <FontAwesomeIcon icon={faTimes} />
                             </div>
                         </div>
                         <div className="booking-betslip__body">
@@ -192,18 +187,7 @@ const BookingBetslip = ({}) => {
     )
 }
 
-const mapStateToProps = createStructuredSelector({
-    selectAllSongAlbumPhotos: SelectAllSongAlbumPhotos,
-    profileAllArtists: ProfileAllArtists,
-    selectAllSong: SelectAllSongAlbumPhotos,
-})
- const mapDispatchToProps = (dispatch) => ({
-    fetchAllArtists: () => dispatch(fetchAllArtistStart()),
-    fetchAllSongs: () => dispatch(fetchAllSongStart()),
-    fetchAllPhotos: () => dispatch(fetchAllPhotoStart()),
- })
-//  export default SideBar;
- export default connect(mapStateToProps, mapDispatchToProps)(BookingBetslip);
+ export default BookingBetslip;
 
 
 

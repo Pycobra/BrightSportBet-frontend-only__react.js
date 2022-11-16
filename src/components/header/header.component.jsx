@@ -1,28 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./header.styles.css";
-import { ReactComponent as Crown } from '../asset/crown.svg';
-import { ReactComponent as Account } from '../asset/user.svg';
-import { ReactComponent as GooglePlay } from '../asset/google-play-black.svg';
-import FormGroup from "../form-group/form-group.components";
 import { Link } from "react-router-dom";
 import CustomButton from "../custom-button/custom-button.component"
-
+import SiteLogo from "../site-logo/site-logo.component";
 
 
 
 
 
 const Header = ({}) => {
+    const HandleClick = (e) => {
+        const SignIn = document.querySelector('#sign-in')
+        SignIn.setAttribute('style', 'display:flex')
+    }
     return (
         <header id="header-item">
             <div className="h-item">
                 <div className="container">
                     <div className="h-item__wrap">
                         <div className="h-item__top-level">
-                            <div className="h-item__top-level__col-1">
-                                <div className='h-item__logo'>
-                                    <Link to="/" className='h-item__logo-icon'><span>BRIGHT</span><span>Bet</span></Link>
+                            <div className="h-item__top-level__col-0">
+                                <div className="h-item__acc">
+                                    <div className="h-item__acc-item">
+                                        <Link style={{color:'var(--orange)',fontWeight:'bold'}} to="/" className="text-primary" id="header__loggedout__register" title="Register">Register</Link>
+                                    </div>
                                 </div>
+                            </div>
+                            <div className="h-item__top-level__col-1">
+                                <SiteLogo />
                                 <nav className='h-item__nav'>
                                     <ul className='h-item__nav-list'>
                                         <li className='h-item__nav-item'>
@@ -61,14 +66,13 @@ const Header = ({}) => {
                             <div className="h-item__top-level__col-2">
                                 <div className="h-item__acc">
                                     <div className="h-item__acc-item">
-                                        <Link to="/" className="text-primary" id="header__loggedout__register" title="Register">Register</Link>
+                                        <Link style={{color:'var(--orange)',fontWeight:'bold'}} to="/" className="text-primary" id="header__loggedout__register" title="Register">Register</Link>
                                     </div>
                                     <div className="h-item__acc-item">
                                         <Link to="/" className="text-primary" id="header__loggedout__passwordrecovery" title="Register">Forgotten Password</Link>
                                     </div>
-                                        {/* <CustomButton buttonType="FlatButton">Login</CustomButton> */}
                                     <div className="h-item__acc-item">
-                                        <CustomButton buttonType="FlatButton">Login</CustomButton>
+                                        <CustomButton onClick={e => HandleClick(e)} buttonType="FlatButton">Login</CustomButton>
                                     </div>
                                 </div>
                             </div>
@@ -119,6 +123,5 @@ const Header = ({}) => {
 }
 
 export default Header;
-// export default connect(mapStateToProps)(Header);
 
 

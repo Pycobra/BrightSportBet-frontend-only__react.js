@@ -1,34 +1,37 @@
 import React, { useEffect, useState } from "react";
-import { connect, useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import { createStructuredSelector } from "reselect";
 import "./main-content.styles.css";
-import { fetchAllArtistStart } from "../../redux/profile/profile.actions";
-import { fetchAllSongStart } from "../../redux/songs/songs.actions";
-import { fetchAllPhotoStart } from "../../redux/photo/photo.actions";
-import { SelectAllSongAlbumPhotos } from "../../redux/songs/songs.selectors";
-import { ProfileAllArtists } from "../../redux/profile/profile.selectors";
 import MainContentCard from "../main-content-card/main-content-card.components";
 import LeagueCard from "../league-card/league-card.components";
+import Accordion from "../accordion/accordion.components";
+import ImageSlide from "../image-slideshow/image-slideshow.components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { 
+    faHockeyPuck, faSoccerBall, faBasketball, faTableTennis, 
+    faBaseball, faVolleyball
+} from "@fortawesome/free-solid-svg-icons"
 
 
-const MainContent = ({leagueNames}) => {
+
+
+
+
+const MainContent = ({leagueNames, AccordionHash}) => {
     const LiveBetting__AccordionHash = [
-        {title: 'Soccer', icon: <span>&#9993;</span>, active:true}, 
-        {title: 'Tennis', icon: <span>&#9993;</span>}, 
-        {title: 'BasketBall', icon: <span>&#9993;</span>},
-        {title: 'VolleyBall', icon: <span>&#9993;</span>}, 
-        {title: 'Ice Hockey', icon: <span>&#9993;</span>}, 
-        {title: 'Table Tennis', icon: <span>&#9993;</span>},
-        {title: 'Beach Volley', icon: <span>&#9993;</span>}
+        {title: 'Soccer', icon: <FontAwesomeIcon icon={faSoccerBall} />, active:true}, 
+        {title: 'Tennis', icon: <FontAwesomeIcon icon={faTableTennis} />, active: false}, 
+        {title: 'BasketBall', icon: <FontAwesomeIcon icon={faBasketball} />, active: false},
+        {title: 'VolleyBall', icon: <FontAwesomeIcon icon={faVolleyball} />, active: false}, 
+        {title: 'Ice Hockey', icon: <FontAwesomeIcon icon={faHockeyPuck} />, active: false}, 
+        {title: 'Table Tennis', icon: <FontAwesomeIcon icon={faTableTennis} />},
     ]
     const Upcoming__AccordionHash = [
-        {title: 'Soccer', icon: <span>&#9993;</span>, active:true}, 
-        {title: 'Tennis', icon: <span>&#9993;</span>}, 
-        {title: 'BasketBall', icon: <span>&#9993;</span>},
-        {title: 'BaseBall', icon: <span>&#9993;</span>}, 
-        {title: 'HandBall', icon: <span>&#9993;</span>}, 
-        {title: 'Rugby', icon: <span>&#9993;</span>},
+        {title: 'Soccer', icon: <FontAwesomeIcon icon={faSoccerBall} />, active:true}, 
+        {title: 'Tennis', icon: <FontAwesomeIcon icon={faTableTennis} />, active: false}, 
+        {title: 'BasketBall', icon: <FontAwesomeIcon icon={faBasketball} />, active: false},
+        {title: 'BaseBall', icon: <FontAwesomeIcon icon={faBaseball} />, active: false}, 
+        {title: 'HandBall', icon: <FontAwesomeIcon icon={faSoccerBall} />, active: false}, 
+        {title: 'Rugby', icon: <FontAwesomeIcon icon={faVolleyball} />, active: false},
     ]
     const [teamsA, setTeamsA] = useState([
         {homeTeam:'Z-Everton', awayTeam:'Z-Wolves', time:"66'",scoreHome:2, scoreAway:3, 
@@ -57,7 +60,7 @@ const MainContent = ({leagueNames}) => {
         homeW:7.23, x:2.23, awayW:3.23, homeDC:2.03, DC:3.33, awayDC:9.23},
     ])
     const [league, setLeague] = useState([
-        {'English Premier League':{
+        {'England Premier League':{
             'Fri 16 Sep':[
                 {homeTeam:'Everton', awayTeam:'Wolves', time:"09:44",scoreHome:2, scoreAway:3, 
                 homeW:1.44, x:3.13, awayW:2.57, homeDC:2.99, DC:1.23, awayDC:3.63}, 
@@ -69,7 +72,7 @@ const MainContent = ({leagueNames}) => {
             'Sat 17 Sep':[
                 {homeTeam:'Chelsea', awayTeam:'Nottingham Forest', time:"12:00",scoreHome:2, scoreAway:3, 
                 homeW:2.54, x:2.13, awayW:7.57, homeDC:2.99, DC:1.23, awayDC:7.63}, 
-                {homeTeam:'Man United', awayTeam:'Southampton', time:"13:00",scoreHome:5, 
+                {hofmeTeam:'Man United', awayTeam:'Southampton', time:"13:00",scoreHome:5, 
                 scoreAway:3, homeW:7.78, x:7.11, awayW:2.23, homeDC:5.05, DC:4.23, awayDC:2.76},
                 {homeTeam:'Man City', awayTeam:'Swansea', time:"16:00",scoreHome:2, 
                 scoreAway:1, homeW:1.93, x:2.03, awayW:6.13, homeDC:7.23, DC:8.43, awayDC:5.99},
@@ -117,7 +120,7 @@ const MainContent = ({leagueNames}) => {
                 scoreAway:1, homeW:8.93, x:2.03, awayW:9.23, homeDC:2.23, DC:1.46, awayDC:5.99},
             ]
         }},
-        {'German Bundesliga':{
+        {'Germany Bundesliga':{
             'Fri 16 Sep':[
                 {homeTeam:'Bayern Munchen', awayTeam:'Ausburg', time:"10:00",scoreHome:2, scoreAway:3, 
                 homeW:2.01, x:3.13, awayW:2.57, homeDC:2.99, DC:1.23, awayDC:3.63}, 
@@ -140,23 +143,64 @@ const MainContent = ({leagueNames}) => {
             ]
         }}
     ])
+
+    const delay = 2500;
+    const [images, setImages] = useState(['img-1', 'img-2', 'img-3']);
+    const [index, setIndex] = React.useState(0);
+    useEffect(() => {
+        setTimeout(
+          () =>
+            setIndex((prevIndex) =>
+              prevIndex === images.length - 1 ? 0 : prevIndex + 1
+            ),
+          delay
+        );
+    
+        return () => {};
+      }, [index]);
     return (
         <div id="main-content">
             <div id="m-con-item">
                 <div className="container">
                     <div className="m-con-item__wrap">
-                        <div className="m-con-item__top-level">
-                            <div className="carousel" style={{userSelect:'none'}}>
-                                <img src={require("../../Media/others/xps-8pb7Hq539Zw-unsplash.png")}/>
+                        <div className="m-con-item__row">
+                            <div className="content">
+                                <ul className='m-con-item__list'>
+                                    {
+                                    leagueNames.map(({title,icon, active}, idx) => 
+                                    <li key={idx} className='m-con-item__list-item' title={title} id={`s-nav__list-item-${idx}`}>
+                                        <div>
+                                            <span className="icon">{icon}</span>
+                                            <Link className={active ? 'active-link' : null} 
+                                                to="/" id={`m-con-item__list-item-${idx}`} title={title}>{title}
+                                            </Link>
+                                        </div>
+                                    </li>)
+                                    }
+                                </ul>
                             </div>
                         </div>
-                        <div className="m-con-item__btm-level">
+                        <div className="m-con-item__row">
+                            <ImageSlide />
+                        </div>
+                        <div className="m-con-item__row">
+                            <div className="content">
+                                <ul className='m-con-item__list'>
+                                    <li className="active-li">Highlights</li>
+                                    <li>Live</li>
+                                    <li>Upcoming</li>
+                                    <li>Zoom</li>
+                                </ul>
+                                <Accordion AccordionHash={AccordionHash} MainContent/>
+                            </div>
+                        </div>
+                        <div className="m-con-item__row">
                             <MainContentCard AccordionHash={LiveBetting__AccordionHash} LiveBetting data={teamsA}/>
                             <MainContentCard AccordionHash={Upcoming__AccordionHash} Upcoming data={teamsB}/>
-                            
                             {
                                 league
-                                ? league.map((data, idx) => <LeagueCard key={idx} data={data} leagueNames={leagueNames}/>)
+                                ? league.map((data, idx) => 
+                                <LeagueCard key={idx} data={data} leagueNames={leagueNames}/>)
                                 : null
                             }
                         </div>
@@ -167,17 +211,6 @@ const MainContent = ({leagueNames}) => {
     )
 }
 
-const mapStateToProps = createStructuredSelector({
-    selectAllSongAlbumPhotos: SelectAllSongAlbumPhotos,
-    profileAllArtists: ProfileAllArtists,
-    selectAllSong: SelectAllSongAlbumPhotos,
-})
- const mapDispatchToProps = (dispatch) => ({
-    fetchAllArtists: () => dispatch(fetchAllArtistStart()),
-    fetchAllSongs: () => dispatch(fetchAllSongStart()),
-    fetchAllPhotos: () => dispatch(fetchAllPhotoStart()),
- })
-//  export default SideBar;
- export default connect(mapStateToProps, mapDispatchToProps)(MainContent);
+ export default MainContent;
 
 

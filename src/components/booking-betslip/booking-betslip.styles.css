@@ -1,6 +1,8 @@
 
 .booking-betslip{
-    
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
 }
 .booking-betslip .booking-betslip__wrap{
     font-weight: bold;
@@ -9,17 +11,14 @@
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    /* background-color: yellow; */
+    padding: 0 10px;
 }
 .booking-betslip .container .booking-betslip__item{
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto;
-    /* justify-content: space-between;
-    align-content: space-between; */
     background: var(--button-inset-color);
     margin-bottom: 10px;
-    /* background-color: blue; */
 }
 .booking-betslip .booking-betslip__head{
     display: grid;
@@ -30,7 +29,6 @@
     padding: 5px 10px;
     width: 100%;
     color: var(--white);
-    /* background-color: var(--green); */
 }
 .booking-betslip .booking-betslip__head .booking-betslip__text-place{
     display: grid;
@@ -39,30 +37,27 @@
     justify-content: space-between;
     grid-gap: 5px;
     align-items: center;
-    color: var(--green);
-    /* background-color: var(--orange); */
+    color: green;
 }
 .booking-betslip .booking-betslip__head .booking-betslip__img-holder{
-    /* background-color: var(--orange); */
     font-size: 20px;
+    font-weight: normal;
 }
 .booking-betslip .booking-betslip__body{
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto;
     justify-content: space-between;
-    color: var(--mask);
+    /* color: var(--mask); */
     width: 100%;
     height: 100px;
-    /* background-color: red; */
 }
 .booking-betslip .booking-betslip__body .booking-betslip__body-col{
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto;
     justify-content: space-between;
-    /* background-color: red; */
-    padding: 5px 32px;
+    padding: 5px 25px;
 }
 .booking-betslip .booking-betslip__body .booking-betslip__body-col span:first-child{
     font-size: 17px;
@@ -85,16 +80,7 @@
 }
 
 @media screen and (max-width:768px){
-    /* #side-bar .content .menubar{
-        padding-right: 10px;
+    .booking-betslip .container{
+        padding: 0;
     }
-    #side-bar .content .box .left-side .icon{
-        padding-right: 10px;
-    } */
-    #side-bar.reduce-height-for-btm-pallete{
-      height: 55vh;
-    }
-    /* #side-bar .content .box{
-        width: auto;
-    } */
   }

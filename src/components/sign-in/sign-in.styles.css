@@ -1,0 +1,200 @@
+#sign-in {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position:fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    z-index: 10;
+    background-color: rgba(0,0,0,.8);
+}
+#sign-in .sign-in-content{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 50%;
+    background-color: #322f2f80;
+}
+#sign-in .sign-in-content .icon{
+    position: absolute;
+    z-index: 2;
+    top: -25px;
+    left: 30%;
+}
+#sign-in .sign-in-content .icon a{
+    font-size: 40px;
+}
+#sign-in .sign-in-content .icon a span:last-child{
+    left: 160px;
+}
+template#sign-in .content{
+    position: relative;
+    display: flex;
+    z-index: 1;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 1px 6px green;
+}
+#sign-in img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+#sign-in .inner-block1{
+    width: 50%;
+}
+#sign-in .inner-block1,
+#sign-in .inner-block2{
+    display: block;
+    height: 100%;
+  }
+#sign-in .inner-block2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    padding: 15px 10px;
+    width: 28vw;
+    width: 50%;
+    background-color: var(--mask);
+  }
+#sign-in .inner-block2 .box-1{
+    margin-bottom: 20px;
+}
+#sign-in .inner-block2 .box-1 span:first-child{
+    color: var(--default);
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 20px;
+}
+#sign-in .inner-block2 .box-1 span:last-child{
+    display: block;
+    letter-spacing: 0.8px;
+    line-height: 25px;
+}
+#sign-in .inner-block2 .box-2{
+    width: 100%;
+}
+#sign-in .inner-block2 .box-2 .radio-div{
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+#sign-in .inner-block2 .box-2 .radio-div div:first-child{
+    margin-right: 20px;
+}
+#sign-in .inner-block2 .box-2 .radio-div input:first-child{
+    margin-right: 12px;
+}
+#sign-in .inner-block2 .box-2 form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#sign-in .inner-block2 .box-2 form .top {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#sign-in .inner-block2 .box-2 form .top .input-wrap{
+    position: relative;
+    width: 100%;
+}
+#sign-in .inner-block2 .box-2 form .top .input-wrap div{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    grid-gap: 3px;
+    justify-content: space-between;
+    align-items: start;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: var(--gray);
+    letter-spacing: 1px;
+    height: 20px;
+    padding: 2px 10px 0 0;
+    border-right: 1px solid var(--gray);
+    font-size: 14px;
+}
+#sign-in .inner-block2 .box-2 form .top .input-wrap img{
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
+
+
+
+
+
+#sign-in .cancel{
+    position: absolute;
+    font-size: 20px;
+    top: 20px;
+    right: 20px;
+    color:green;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 1s ease;
+  }
+#sign-in .cancel:hover{
+    transform: rotate(90deg);
+  }
+  
+
+
+
+
+  
+@media screen and (max-width:768px){
+    #sign-in{
+        background-color: var(--black);
+    }
+    #sign-in .sign-in-content{
+        width: 80%;
+    }
+    #sign-in img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    #sign-in .inner-block1{
+        width: 40%;
+    }
+    #sign-in .inner-block2{
+        width: 60%;
+    }
+    #sign-in .sign-in-content .icon a{
+        font-size: 30px;
+    }
+    #sign-in .sign-in-content .icon a span:last-child{
+        left: 125px;
+    }
+}
+@media screen and (max-width:540px){
+    #sign-in .inner-block2 .box-2 form .top .input-wrap div{
+        left: 10px;
+        padding: 2px 5px 0 0;
+    }
+}
+@media screen and (max-width:414px){
+    #sign-in .inner-block1{
+        display: none;
+    }
+    #sign-in .inner-block2{
+        width: auto;
+    }
+}
+
+

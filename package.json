@@ -4,13 +4,21 @@
   "private": true,
   "homepage": "https://Pycobra.github.io/BrightSportBet-frontend-only__react.js",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-regular-svg-icons": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
+    "apollo-boost": "^0.4.9",
+    "axios": "^1.1.3",
     "cors": "^2.8.5",
     "firebase": "^9.13.0",
     "gh-pages": "^4.0.0",
+    "graphql": "^16.6.0",
     "react": "^18.1.0",
+    "react-apollo": "^3.1.5",
     "react-dom": "^18.1.0",
     "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
@@ -51,7 +59,7 @@
     ]
   },
   "main": "index.js",
-  "repository": "git@github.com:Pycobra/monsters-rolodex.git",
+  "repository": "git@github.com:Pycobra/BrightSportBet-frontend-only__django.py.git",
   "author": "Bright Orji <megabright007@gmail.com>",
   "license": "MIT"
 }

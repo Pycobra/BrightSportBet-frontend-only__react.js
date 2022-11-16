@@ -2,14 +2,14 @@
     box-sizing:border-box;
     list-style: none;
     text-decoration: none;
+    padding: 0;
+    margin: 0;
     /* color:var(--normalwhite); */
 }
 .app {
     overflow: hidden;
-    /* height: 100vh; */
     width: 100vw;
     display: flex;
-    /* background-color: green; */
 }
 #wrapper {
     overflow: hidden;
@@ -17,12 +17,9 @@
     display: flex;
 }
 main{
-    margin-top: 23vh;
+    margin-top: 16.5vh;
     width: 100vw;
     z-index:1;
-    /* position:absolute;
-    top:23vh;
-    left: 0; */
     border-radius: 50px 50px 0 0 ;
 }
 #main-wrap-content{
@@ -39,3 +36,17 @@ main{
     background-color: var(--normalblack);
 }
   
+
+
+
+@media screen and (max-width:768px){
+    main{
+        margin-top: 18vh;
+    }
+}
+
+@media screen and (max-width:540px){
+    main{
+        margin-top: 16vh;
+    }
+}

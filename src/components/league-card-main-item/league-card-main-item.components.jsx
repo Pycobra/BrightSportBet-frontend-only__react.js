@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./league-card-main-item.styles.css";
 import BetslipTableItem from "../betslip-table-item/betslip-table-item.components";
-import { ReactComponent as CaretRight } from '../asset/caret-double-right-duotone.svg';
 
 
 

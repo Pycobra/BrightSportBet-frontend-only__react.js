@@ -35,6 +35,7 @@
   --default: #ececec;
   --pale-gray: #adadad;
   --light-gray: #f8f8f8;
+  --linear-color-1: linear-gradient(to right, #544f4fca,var(--major), var(--normal));
   --button-color: linear-gradient(to right, rgb(255, 255, 255),var(--major));
   --button-inset-color: linear-gradient(to right, var(--mask), rgb(255, 255, 255), var(--mask));
   --button-reverse-color: linear-gradient(to right, var(--major), rgb(255, 255, 255));
